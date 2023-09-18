@@ -1,5 +1,6 @@
 import 'package:flutter_gorouter_basic/screens/1_basic_screen.dart';
 import 'package:flutter_gorouter_basic/screens/2_named_screen.dart';
+import 'package:flutter_gorouter_basic/screens/3_push_screen.dart';
 import 'package:flutter_gorouter_basic/screens/root_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -8,6 +9,7 @@ import 'package:go_router/go_router.dart';
 // / -> home
 // /basic -> basic screen
 // /named -> named screen
+// /push -> push screen
 final router = GoRouter(
   routes: [
     GoRoute(
@@ -27,6 +29,12 @@ final router = GoRouter(
           name: 'named_screen',
           builder: (context, state) {
             return const NamedScreen();
+          },
+        ),
+        GoRoute(
+          path: 'push',
+          builder: (context, state) {
+            return const PushScreen();
           },
         ),
       ],
